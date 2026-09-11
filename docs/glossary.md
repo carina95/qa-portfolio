@@ -15,7 +15,7 @@
 
 **Lesson 2** What actually happens when you open a website
 
-1. Terminal
+Terminal
 * Terminal — the application window you type commands into.
 * Shell — the program inside it that reads and executes what you type (zsh).
 * Command line / CLI — the line you type on; the general name for working this way.
@@ -30,7 +30,7 @@
 * Hidden file — name starts with a dot; invisible in Finder, shown by ls -a.
 * man page — built-in manual for a command; quit with q.
 
-2. Web
+Web
 * Client — the machine making requests; for you, Chrome.
 * Server — the machine receiving requests and sending responses.
 * Protocol — an agreed format and sequence for exchanging messages.
@@ -77,3 +77,13 @@
 * GitHub — a website that hosts copies of repos. Git is the tool; GitHub is a place.
 * Remote / origin — a nickname for a copy of the repo elsewhere; origin is the conventional name for the GitHub copy.
 * git push — upload your commits to the remote.
+
+**Lesson 5**
+* Image — a frozen, complete copy of an application; bkimminich/juice-shop is one.
+* Container — one running instance of an image; restarting it resets the app to a clean state.
+* docker run -d -p 3000:3000 --name X image — create and start a container: detached, port-mapped, named.
+* docker restart / docker rm -f — reset a container to clean state / force-remove it.
+* Oracle — the basis on which you judge behaviour wrong. Consistency oracle (the app contradicts itself) is the strongest; external-standard oracle (weaker than common practice) is weaker and more arguable; personal preference is not an oracle.
+* Severity — how badly the defect hurts the user. Minor = nothing breaks, task still completes.
+* Evidence — an artifact (screenshot, response) that proves the failure independent of your words.
+* Markdown image — ![description](path), path relative to the file.
