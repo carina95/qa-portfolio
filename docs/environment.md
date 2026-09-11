@@ -25,7 +25,7 @@
 ## Services
 | Service | Status | How to check |
 |---|---|---|
-| Docker daemon | (fill in) | `docker info` |
+| Docker daemon | running, ServerVersion 29.7.2 | `docker info` |
 
 ## System under test
 | | |
