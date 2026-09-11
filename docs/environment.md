@@ -28,8 +28,6 @@
 | Docker daemon | running, ServerVersion 29.7.2 | `docker info` |
 
 ## System under test
-| | |
-|---|---|
-| Application | (Lesson 5) |
+| Application | OWASP Juice Shop |
 | URL | http://localhost:3000 |
-| Build version | (Lesson 5) |
+| Build version | 20.2.0 |
