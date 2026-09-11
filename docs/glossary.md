@@ -77,4 +77,3 @@
 * GitHub — a website that hosts copies of repos. Git is the tool; GitHub is a place.
 * Remote / origin — a nickname for a copy of the repo elsewhere; origin is the conventional name for the GitHub copy.
 * git push — upload your commits to the remote.
-* > — redirect output into a file, replacing it. >> — append to the end instead.
