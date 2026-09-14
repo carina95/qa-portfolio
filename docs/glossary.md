@@ -87,3 +87,53 @@ Web
 * Severity — how badly the defect hurts the user. Minor = nothing breaks, task still completes.
 * Evidence — an artifact (screenshot, response) that proves the failure independent of your words.
 * Markdown image — ![description](path), path relative to the file.
+
+**Lesson 6**  ISTQB seven principles:
+
+1. Testing shows the presence of defects, not their absence.
+You can find a bug and prove it's there. You can never test enough to prove there are none left — finding nothing means you didn't find anything, not that nothing is there.
+The rule it gives you: never say "it's bug-free" or "it works." Say "I found no defects in the areas I tested" — which is a true statement about your activity, not a false guarantee about the software.
+Juice Shop: you tested the registration password field and found BUG-001. You did not test what happens when registration is submitted with the Enter key, or on a slow connection, or twice quickly. Your report is honest about the first and silent about the rest — as it should be.
+
+2. Exhaustive testing is impossible.
+Testing every possible input and combination is, for almost any real feature, a number so large it exceeds available time by orders of magnitude.
+The rule it gives you: you must choose what to test, deliberately, because you cannot test everything. Testing is a sampling problem, and your skill is picking the sample that finds the most defects.
+Juice Shop: the password field accepts 5 to 40 characters. That's not 36 tests — each length can contain letters, digits, symbols, spaces, emoji, in any arrangement. You could test for a century. Instead you'll test the boundaries — 4, 5, 40, 41 — and one typical value, and move on. That specific choice is Lesson 12; principle 2 is why it exists.
+
+3. Early testing saves time and money. (Shift-left.)
+A defect caught in a planning conversation costs a sentence to fix. The same defect caught after release costs a hotfix, a support ticket, and possibly a lost customer. The cost of a defect rises the later it's found — steeply.
+The rule it gives you: get involved as early as you're allowed to. Reading a requirement and asking "what does this do if the basket is empty?" is testing, and it's the cheapest testing there is.
+Juice Shop: if someone had asked "should the password hint and the counter show the same maximum?" during design, BUG-001 would never have shipped. Finding it now is good; preventing it then would have been better and cheaper.
+
+4. Defects cluster together. (The Pareto principle: roughly 80% of defects live in roughly 20% of the code.)
+Bugs are not spread evenly. A few modules — usually the newest, most complex, or most rushed — hold most of the problems.
+The rule it gives you: when you find one defect in an area, look harder there, not elsewhere. Density predicts density.
+Juice Shop: you found a defect on the registration form. Principle 4 says the registration form is now your best bet for finding more — so test its email validation, its security-question dropdown, its error handling next, before wandering off to the product list. Follow the smoke.
+
+5. Tests wear out. (The pesticide paradox.)
+Run the exact same set of tests over and over and they stop finding new defects — they've found everything they're capable of finding. Like a pesticide that stops working as pests grow resistant.
+The rule it gives you: your test set must evolve. Add new cases, vary your data, explore new paths — or your testing slowly becomes theatre that passes every time and catches nothing.
+Juice Shop: if you run "register with test@test.com / Password1" every sprint forever, it'll pass forever and tell you nothing new. This principle is also the honest argument for automation later: the boring, unchanging checks should be run by a machine, freeing you to do the varied, exploratory testing that actually finds fresh bugs.
+
+6. Testing is context-dependent.
+You test a banking app differently from a game differently from a training app like Juice Shop. The risks, the standards, and therefore the testing all change with the context.
+The rule it gives you: there is no universal checklist. What "enough testing" means is set by what the software does and what it costs when it fails.
+Juice Shop: a 5-character-minimum password (your Exercise 2) is a shrug on a throwaway demo and a serious defect on a real bank. Same observation, different severity, entirely because of context. This is why your severity judgement (Lesson 25) always depends on what the app is for.
+
+7. Absence-of-errors is a fallacy.
+Software can be flawless against its spec and still be a failure — because it's the wrong product, or unusable, or nobody wanted it. "Zero bugs" does not mean "good."
+The rule it gives you: test against real user needs, not only against the written requirements. "It matches the spec" is not the last word if the spec is wrong.
+Juice Shop: imagine the checkout works perfectly, no defects — but there's no way to see your order history afterward. Every test passes; the product still fails the user. Your job includes noticing that gap, even though nothing is technically "broken." This is the principle that makes you a tester rather than a spec-checker, and it's why your 3/3 on the judgement questions matters more than any command you've learned.
+
+Sprint — a fixed period (usually two weeks) in which a team commits to and delivers a set of work.
+Shift-left — involving testing as early as possible in development, when defects are cheapest to fix.
+Three amigos — a focused conversation between business, development, and testing about one feature's detail.
+Test analysis / test design — working out what to test, and writing the tests, often before the code is ready.
+Re-test — running a test again after a fix, to confirm the specific defect is gone.
+Regression testing — re-checking that a change didn't break something that used to work.
+The seven principles — presence-not-absence; exhaustive testing is impossible; early testing; defect clustering (Pareto); pesticide paradox; context-dependence; absence-of-errors fallacy.
+Pareto principle — roughly 80% of defects cluster in roughly 20% of the software.
+Pesticide paradox — repeated identical tests stop finding new defects.
+
+Before writing an "expected result," ask: where does this expectation come from? Name the oracle — the app's own stated rule, a universal fact, an external standard, a comparable product, or a real user's need. If you can't name one, you're guessing, and a guessed expected leads to a false bug.
+
