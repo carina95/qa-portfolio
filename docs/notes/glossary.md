@@ -137,3 +137,21 @@ Pesticide paradox — repeated identical tests stop finding new defects.
 
 Before writing an "expected result," ask: where does this expectation come from? Name the oracle — the app's own stated rule, a universal fact, an external standard, a comparable product, or a real user's need. If you can't name one, you're guessing, and a guessed expected leads to a false bug.
 
+**Lesson 7**
+
+Test process — the seven activities: planning, monitoring & control, analysis, design, implementation, execution, completion.
+Test planning — defining scope, risks, and exit criteria before starting.
+Test monitoring and control — tracking progress against the plan and steering; runs continuously.
+Exit criteria — the conditions that define "done" for a test effort.
+Test analysis — deciding what to test; produces test conditions.
+Test basis — everything you test against: requirements, forms, rules, hints.
+Test condition — an aspect worth testing, named but not yet turned into steps.
+Test design — deciding how to test each condition; produces test cases.
+Test case — a specific input + expected result (+ its oracle) that checks a condition.
+Test implementation — ordering cases, preparing test data and preconditions to make them runnable.
+Test data — the specific values a test uses.
+Precondition — what must be true before a test can run.
+Test execution — running cases and recording results: pass / fail / blocked / skipped.
+Blocked — a test that couldn't be run (e.g. a broken dependency), distinct from failed.
+Test completion — wrapping up: summary report, archived artifacts, lessons learned.
+Work product — anything an activity produces (plan, conditions, cases, results, report).
