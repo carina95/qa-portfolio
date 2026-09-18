@@ -155,3 +155,26 @@ Test execution — running cases and recording results: pass / fail / blocked / 
 Blocked — a test that couldn't be run (e.g. a broken dependency), distinct from failed.
 Test completion — wrapping up: summary report, archived artifacts, lessons learned.
 Work product — anything an activity produces (plan, conditions, cases, results, report).
+
+**Lesson 8**
+
+TEST BASIS         what you derive tests FROM. 
+(ISTQB): the body of knowledge used as the basis for test analysis and design.
+    │  (test analysis: "what could I test?")
+    ▼
+TEST CONDITIONS    testable aspects of the basis 
+(ISTQB): a testable aspect of a component or system identified as a basis for testing.
+    │  (test design + a technique: "what specific things must I check?")
+    ▼
+COVERAGE ITEMS     the specific, countable things a test must exercise
+(ISTQB): an attribute or combination of attributes derived from one or more test conditions by using a test technique.
+    │  (test design: "what inputs and expected result?")
+    ▼
+TEST CASES         preconditions + inputs + expected result + postconditions
+(ISTQB): a set of preconditions, inputs, actions (where applicable), expected results and postconditions, developed based on test conditions.
+
+COVERAGE = (coverage items exercised ÷ total coverage items) × 100%
+the degree to which specified coverage items have been exercised, expressed as a percentage.
+
+
+
