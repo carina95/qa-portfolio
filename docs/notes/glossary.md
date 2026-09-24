@@ -159,22 +159,64 @@ Work product — anything an activity produces (plan, conditions, cases, results
 **Lesson 8**
 
 TEST BASIS         what you derive tests FROM. 
-(ISTQB): the body of knowledge used as the basis for test analysis and design.
+    (ISTQB): the body of knowledge used as the basis for test analysis and design.
     │  (test analysis: "what could I test?")
     ▼
 TEST CONDITIONS    testable aspects of the basis 
-(ISTQB): a testable aspect of a component or system identified as a basis for testing.
+    (ISTQB): a testable aspect of a component or system identified as a basis for testing.
     │  (test design + a technique: "what specific things must I check?")
     ▼
 COVERAGE ITEMS     the specific, countable things a test must exercise
-(ISTQB): an attribute or combination of attributes derived from one or more test conditions by using a test technique.
+    (ISTQB): an attribute or combination of attributes derived from one or more test conditions by using a test technique.
     │  (test design: "what inputs and expected result?")
     ▼
 TEST CASES         preconditions + inputs + expected result + postconditions
-(ISTQB): a set of preconditions, inputs, actions (where applicable), expected results and postconditions, developed based on test conditions.
+    (ISTQB): a set of preconditions, inputs, actions (where applicable), expected results and postconditions, developed based on test conditions.
 
 COVERAGE = (coverage items exercised ÷ total coverage items) × 100%
-the degree to which specified coverage items have been exercised, expressed as a percentage.
+    the degree to which specified coverage items have been exercised, expressed as a percentage.
 
 
 
+**Lesson 10**
+What an oracle is
+    Definition (ISTQB): a test oracle is a source used to determine expected results. Plainly: the thing you compare the software's behaviour against to decide right from wrong.
+
+The eleven oracles (FEW HICCUPPS)
+F — Familiar. Consistent with the pattern of familiar problems — does this look like a class of bug you've seen before? Juice Shop: the password field showing two different maximums (BUG-001) matches the familiar pattern of "validation message and validation logic drifted apart," which any experienced tester has seen a hundred times. Recognising the pattern is itself an oracle.
+
+E — Explainability. Consistent with your ability to explain it. If you can't construct a sensible reason the software would do this, that inability is a signal. Juice Shop: an empty search returning all 46 products — can you explain why it would? "Empty means show everything" is one explanation, so it passes this oracle weakly. But if a behaviour leaves you saying "there's no sane reason it would do that," suspect a bug.
+
+W — World. Consistent with known facts about the world. Juice Shop: prices display as 1.99¤ and 5000¤. The ¤ is the generic "unknown currency" placeholder — but in the real world, prices are in euros, lei, dollars. A shop that can't name its currency is inconsistent with how commerce works in the world. 
+
+H — History. Consistent with the product's own past behaviour. If a feature worked in the last release and doesn't now, that's a regression — history is the oracle. Juice Shop: the apostrophe search used to crash with a 500 in older versions and now returns a clean empty result — history tells us the behaviour changed, and (here) improved. Every regression bug you ever file uses this oracle.
+
+I — Image. Consistent with the image or reputation the organisation wants to project. Juice Shop: a raw database error or stack trace shown to a user is inconsistent with the image any real company wants — it looks unprofessional and leaks internals. "This makes the company look bad" is a legitimate, nameable oracle, not just a vibe.
+
+C — Comparable products. Consistent with comparable products. For Juice Shop, "every other e-commerce search trims whitespace / shows a currency / lets you remove a basket item" all draw on comparable products. 
+
+C — Claims. Consistent with what people claim about it — the spec, the marketing, the documentation, the on-screen hint text. Juice Shop: the field claims "Password must be 5-40 characters long." 
+
+U — User expectations. Consistent with what a reasonable user would expect and want. Juice Shop: a user expects that if they type a product name that exists, they'll find it. Note this differs from Claims — the app might never claim anything about this, but the user reasonably expects it anyway. (The real-user-need oracle.)
+
+P — Product. Consistent within itself — internal consistency. Does the feature behave like the rest of the same product? Does one part contradict another? Juice Shop: BUG-001 again — the hint says 40, the counter says 20, the field accepts 30; three parts of one feature disagreeing. (The internal-consistency oracle — the one you nailed on the basket's − button.)
+
+P — Purpose. Consistent with its intended purpose. What is this thing for, and does it serve that? Juice Shop: a login form's purpose is to admit valid users and reject invalid ones; if it let a wrong password through, it fails its purpose regardless of what any spec says.
+
+S — Standards and statutes. Consistent with external standards and laws. Juice Shop, and this one matters enormously for your target market: a 5-character-minimum password is below security standards (NIST). Accessibility must meet WCAG (Lesson 52). And GDPR is EU law — how the app handles personal data isn't a matter of taste, it's a legal standard, and "this violates GDPR" is one of the most powerful oracle statements you can make in a Romanian or EU shop. (The external-standard oracle.)
+
+**Lesson 11**
+
+Executable (low-level / concrete) test case — a case with all values filled in, runnable step by step with no judgement required.
+High-level (logical) test case — describes what to test without concrete data.
+ID — unique, stable identifier for a case.
+Precondition — what must be true before step 1; makes the case reproducible.
+Test data — the specific values a case uses, often listed separately from steps.
+Step — one numbered action; each observable step has its own expected result.
+Expected result — what should happen, anchored to an oracle.
+Postcondition — what must be true after the case finishes.
+Atomicity — one test case verifies one thing, so a failure points at one feature.
+Positive test case — verifies correct behaviour with valid input.
+Negative test case — verifies correct rejection/handling of invalid input.
+Status — the execution result: Pass / Fail / Blocked / Skipped (filled in when run, not when written).
+Traceability link — which requirement or condition the case covers.
