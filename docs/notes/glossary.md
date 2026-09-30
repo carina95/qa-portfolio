@@ -220,3 +220,13 @@ Positive test case — verifies correct behaviour with valid input.
 Negative test case — verifies correct rejection/handling of invalid input.
 Status — the execution result: Pass / Fail / Blocked / Skipped (filled in when run, not when written).
 Traceability link — which requirement or condition the case covers.
+
+**Lesson 12**
+
+Boundary — a point where the software's behaviour is meant to change; the line between two partitions.
+Boundary value analysis (BVA) — testing the values on and immediately around each boundary.
+2-value BVA — for each boundary, test the boundary value and its nearest neighbour across it (e.g. 5 and 6).
+3-value BVA — for each boundary, test the boundary value and both neighbours (e.g. 4, 5, 6); for higher-risk fields.
+Off-by-one error — a defect from a wrong comparison at a boundary (> vs >=), the most common boundary bug.
+Ordered data — inputs with a sequence (numbers, lengths, dates) where boundaries exist; BVA applies only here.
+BVA coverage — boundary values tested ÷ total boundary values × 100%.
