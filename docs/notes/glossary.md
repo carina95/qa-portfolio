@@ -230,3 +230,14 @@ Boundary value analysis (BVA) — testing the values on and immediately around e
 Off-by-one error — a defect from a wrong comparison at a boundary (> vs >=), the most common boundary bug.
 Ordered data — inputs with a sequence (numbers, lengths, dates) where boundaries exist; BVA applies only here.
 BVA coverage — boundary values tested ÷ total boundary values × 100%.
+
+**Lesson 13**
+Decision table — a table mapping combinations of conditions to the actions they should produce.
+Condition — an input/cause in a decision table, usually yes/no.
+Action — an outcome/effect the conditions produce.
+Rule — one column: a specific combination of condition values plus its action. Each rule = one test case.
+Full decision table — all 2ⁿ combinations for n binary conditions.
+"Don't care" (—) — a condition whose value doesn't affect the outcome in that column; lets columns merge.
+Impossible combination — a combination that can't occur; its column is removed.
+Combinational bug — a defect that appears only for a specific combination of inputs, invisible to single-input tests.
+Decision-table coverage — rules tested ÷ total rules × 100%.
