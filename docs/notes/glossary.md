@@ -241,3 +241,18 @@ Full decision table — all 2ⁿ combinations for n binary conditions.
 Impossible combination — a combination that can't occur; its column is removed.
 Combinational bug — a defect that appears only for a specific combination of inputs, invisible to single-input tests.
 Decision-table coverage — rules tested ÷ total rules × 100%.
+
+**Lesson 14**
+
+Vocabulary
+State — a condition of the system that affects how it responds to events.
+Event — a trigger: a user action or a system occurrence.
+Transition — a move from one state to another, caused by an event.
+Guard condition — a condition that must be true for a transition to be allowed.
+Self-transition — an event that leaves the system in the same state.
+State diagram — states as boxes and transitions as labelled arrows.
+State table — states × events; each cell is the next state or invalid.
+Invalid transition — an event that should have no effect, or be refused, in a given state.
+0-switch (valid transitions) coverage — every valid transition exercised at least once.
+1-switch coverage — every valid pair of consecutive transitions exercised.
+All transitions coverage — every valid transition plus an attempt at every invalid one.
