@@ -1,0 +1,6 @@
+Browser:  Chrome, Firefox, Safari
+Account:  New, Returning
+Delivery: One Day Delivery, Fast Delivery, Standard Delivery
+Payment:  Saved card, New card
+
+IF [Account] = "New" THEN [Payment] = "New card";
