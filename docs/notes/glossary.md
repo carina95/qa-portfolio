@@ -289,3 +289,13 @@ COVERAGE = (coverage items exercised ÷ total coverage items) × 100%
 * **Model file** — the text file you give PICT: parameters, values, and constraints.
 * **PICT** — Microsoft's free tool that generates pairwise sets from a model file.
 * **Spot-check** — checking a few pairs by hand to confirm a generated set is correct.
+
+## Lesson 16 — Experience-based testing
+
+* **Experience-based testing** — tests that come from the tester's knowledge of where software usually fails, rather than from what it's specified to do.
+* **Error guessing** — predicting the mistakes developers commonly make, and testing for exactly those.
+* **Fault list** — a written list of typical mistakes to guess at; makes error guessing repeatable and shareable.
+* **Fault attack** — error guessing made systematic: one type of mistake, tried everywhere it could apply.
+* **Double submission** — the same save/send action being processed twice (double-click, Back + resubmit, refresh).
+* **Checklist-based testing** — running a reusable list of checks on every screen or field of a given kind.
+* **Locale** — the regional conventions a user expects: language, characters, date and number formats, phone formats.
