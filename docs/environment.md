@@ -4,6 +4,17 @@
 **OS:** macOS 26.6.2 (Darwin 25.6.0)
 **Recorded:** 2026-09-09
 
+## Test account
+
+The functional test cases assume a standard registered user exists:
+
+- **Email:** `test@test.com`
+- **Password:** `Test1234`
+
+Create it once on a freshly restarted container via the registration form
+(`/#/register`) before running the logged-in cases. Juice Shop starts with no
+such account, so this step is a precondition for the whole suite.
+
 ## Browsers
 | Browser | Version | Notes |
 |---|---|---|

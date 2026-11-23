@@ -299,3 +299,11 @@ COVERAGE = (coverage items exercised ÷ total coverage items) × 100%
 * **Double submission** — the same save/send action being processed twice (double-click, Back + resubmit, refresh).
 * **Checklist-based testing** — running a reusable list of checks on every screen or field of a given kind.
 * **Locale** — the regional conventions a user expects: language, characters, date and number formats, phone formats.
+
+## Lesson 17 — Assembling a test suite
+
+* **Test suite** — a collection of test cases grouped to be understood, run and maintained together.
+* **Suite overview** — the short summary at the top: application, coverage, techniques, organisation. The reviewer's 30-second read.
+* **Traceability** — being able to follow a thread between artifacts: case → technique, case → requirement, case → bug.
+* **Coverage of techniques** — showing a range of design methods (EP, BVA, decision tables…) rather than many cases of one kind.
+* **Portfolio-ready** — a case in full format with an oracle, demonstrating a technique cleanly; the bar for inclusion.
